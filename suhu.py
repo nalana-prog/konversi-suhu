@@ -31,7 +31,7 @@ def konversi_suhu(suhu, dari, ke):
         return "Error: satuan asal tidak valid"
 
     # Validasi: Kelvin tidak boleh negatif
-    if ke == 'K' and hasil < 0:
+    elif ke == 'K' and hasil < 0:
         return "Error: nilai suhu tidak valid (Kelvin < 0)"
 
     return hasil
