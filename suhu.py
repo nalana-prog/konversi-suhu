@@ -8,35 +8,39 @@ def konversi_suhu(suhu, dari, ke):
     dari = dari.upper()
     ke = ke.upper()
 
-    if dari not in ['c','f','k']:
-       return "Eror: satuan asal tidak valid, gunakann c, f, atau k"
-    if ke not in ['c','f','k']:
-       return "Eror: satuan tujuan tidak valid, gunakann C, F, atau K"
+    # Validasi input
+    if dari not in ['C','F','K']:
+        return "Error: satuan asal tidak valid, gunakan C, F, atau K"
+    if ke not in ['C','F','K']:
+        return "Error: satuan tujuan tidak valid, gunakan C, F, atau K"
 
-
+    # Konversi
     if dari == 'C':
         if ke == 'F':
-            return (suhu * 9/5) + 32
+            result = (suhu * 9/5) + 32
         elif ke == 'K':
-            return suhu + 273.15
-        elif ke == 'C':
-            return suhu
+            result = suhu + 273.15
+        else:
+            result = suhu
 
     elif dari == 'F':
         if ke == 'C':
-            return (suhu - 32) * 5/9
+            result = (suhu - 32) * 5/9
         elif ke == 'K':
-            return (suhu - 32) * 5/9 + 273.15
-        elif ke == 'F':
-            return suhu
+            result = (suhu - 32) * 5/9 + 273.15
+        else:
+            result = suhu
 
     elif dari == 'K':
         if ke == 'C':
-            return suhu - 273.15
+            result = suhu - 273.15
         elif ke == 'F':
-            return (suhu - 273.15) * 9/5 + 32
-        elif ke == 'K':
-            return suhu
-    elif ke == 'K' and hasil < 0:
-    return "Eror: nilai suhu tidak valid"
+            result = (suhu - 273.15) * 9/5 + 32
+        else:
+            result = suhu
 
+    # Validasi suhu Kelvin tidak negatif
+    if ke == 'K' and result < 0:
+        return "Error: nilai suhu tidak valid (Kelvin tidak bisa negatif)"
+
+    return result
