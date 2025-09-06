@@ -1,38 +1,36 @@
 def konversi_suhu(nilai, dari, ke):
-    nilai = float(nilai)
-    dari = dari.upper()
-    ke = ke.upper()
+  nilai = float(nilai)
+  dari = dari.lower()
+  ke = ke.lower()
 
-    if dari == 'C':
-        if ke == 'F':
-            hasil = (nilai * 9/5) + 32
-        elif ke == 'K':
-            hasil = nilai + 273.15
-        elif ke == 'C':
-            hasil = nilai
-        else:
-            hasil = "Invalid target unit"
+  if dari not in ['c','f','k']:
+    return "Eror: satuan asal tidak valid, gunakann c, f, atau k"
+  if ke not in ['c','f','k']:
+    return "Eror: satuan tujuan tidak valid, gunakann C, F, atau K"
 
-    elif dari == 'F':
-        if ke == 'C':
-            hasil = (nilai - 32) * 5/9
-        elif ke == 'K':
-            hasil = (nilai - 32) * 5/9 + 273.15
-        elif ke == 'F':
-            hasil = nilai
-        else:
-            hasil = "Invalid target unit"
-
-    elif dari == 'K':
-        if ke == 'C':
-            hasil = nilai - 273.15
-        elif ke == 'F':
-            hasil = (nilai - 273.15) * 9/5 + 32
-        elif ke == 'K':
-            hasil = nilai
-        else:
-            hasil = "Invalid target unit"
+  if dari == 'c':
+    if ke == 'f':
+      return nilai * 9/5 + 32
+    elif ke == 'k':
+      return nilai + 273.15
     else:
-        hasil = "Invalid source unit"
+      return nilai
 
-    return hasil
+  if dari == 'f':
+    if ke == 'c':
+      return (nilai - 32) * 5/9
+    elif ke == 'k':
+      return (nilai - 32) * 5/9 + 273.15
+    else:
+      return nilai
+
+  if dari == 'k':
+    if ke == 'c':
+      return nilai - 273.15
+    elif ke == 'f':
+      return (nilai - 273.15) * 9/5 + 32
+    else:
+      return nilai
+
+  if ke == 'k' and hasil < 0:
+    return "Eror: nilai suhu tidak valid"
