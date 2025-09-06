@@ -34,5 +34,3 @@ elif dari == "K" and ke == "F":
 else:
     print("Satuan suhu tidak valid.")
 
-#Hasil Konversi
-print(f"Hasil konversi: {suhu}° {dari} = {hasil}° {ke}")
