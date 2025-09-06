@@ -1,4 +1,8 @@
 #Rumus Konversi Suhu
+def konversi_suhu(nilai, dari, ke):
+  nilai = float(nilai)
+  dari = dari.upper()
+  ke = ke.upper()
 if dari == 'C':
     if ke == 'F':
         hasil = (suhu * 9/5) + 32
