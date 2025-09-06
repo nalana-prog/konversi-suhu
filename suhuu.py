@@ -7,7 +7,7 @@ if dari == 'C':
     elif ke == 'C':
         hasil = suhu
     else:
-        hasil = "satuan suhu tidak valid"
+        hasil = "Invalid target unit"
 elif dari == 'F':
     if ke == 'C':
         hasil = (suhu - 32) * 5/9
@@ -16,7 +16,7 @@ elif dari == 'F':
     elif ke == 'F':
         hasil = suhu
     else:
-        hasil = "satuan suhu tidak valid"
+        hasil = "Invalid target unit"
 elif dari == 'K':
     if ke == 'C':
         hasil = suhu - 273.15
@@ -25,8 +25,6 @@ elif dari == 'K':
     elif ke == 'K':
         hasil = suhu
     else:
-        hasil = "satuan suhu tidak valid"
+        hasil = "Invalid target unit"
 else:
-    hasil = "satuan suhu tidak valid"
-
-
+    hasil = "Invalid source unit"
