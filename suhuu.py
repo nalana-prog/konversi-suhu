@@ -1,21 +1,21 @@
 #Rumus Konversi Suhu
-def celsius_ke_fahrenheit(c):
-  return (c * 9/5) + 32
+def celsius_ke_fahrenheit(suhu):
+  return (suhu * 9/5) + 32
 
-def celsius_ke_kelvin(c):
-  return c + 273.15
+def celsius_ke_kelvin(suhu):
+  return suhu + 273.15
 
-def fahrenheit_ke_celsius(f):
-  return (f - 32) * 5/9
+def fahrenheit_ke_celsius(suhu):
+  return (suhu - 32) * 5/9
 
-def fahrenheit_ke_kelvin(f):
-  return (fahrenheit_ke_celsius(f) + 273.15)
+def fahrenheit_ke_kelvin(suhu):
+  return (fahrenheit_ke_celsius(suhu) + 273.15)
 
-def kelvin_ke_celsius(k):
-  return k - 273.15
+def kelvin_ke_celsius(suhu):
+  return suhu - 273.15
 
-def kelvin_ke_fahrenheit(k):
-  return (kelvin_ke_celsius(k) * 9/5) + 32
+def kelvin_ke_fahrenheit(suhu):
+  return (kelvin_ke_celsius(suhu) * 9/5) + 32
 
 #Pemilihan Rumus Konversi
 
