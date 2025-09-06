@@ -8,6 +8,12 @@ def konversi_suhu(suhu, dari, ke):
     dari = dari.upper()
     ke = ke.upper()
 
+    if dari not in ['c','f','k']:
+       return "Eror: satuan asal tidak valid, gunakann c, f, atau k"
+    if ke not in ['c','f','k']:
+       return "Eror: satuan tujuan tidak valid, gunakann C, F, atau K"
+
+
     if dari == 'C':
         if ke == 'F':
             return (suhu * 9/5) + 32
@@ -34,4 +40,3 @@ def konversi_suhu(suhu, dari, ke):
     if ke == 'k' and hasil < 0:
     return "Eror: nilai suhu tidak valid"
 
-    return "Satuan tidak valid!"
