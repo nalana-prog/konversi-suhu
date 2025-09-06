@@ -17,14 +17,7 @@ def kelvin_ke_celsius(k):
 def kelvin_ke_fahrenheit(k):
   return (kelvin_ke_celsius(k) * 9/5) + 32
 
-#Input Pengguna
-print("===" + "KONVERSI SUHU" + "===")
-suhu = float(input("Masukan nilai suhu: "))
-dari = input("Masukan satuan suhu (C/F/K): ").upper()
-ke = input("Masukan satuan suhu yang diinginkan (C/F/K): ").upper()
-
 #Pemilihan Rumus Konversi
-hasil = None # Initialize hasil to None
 
 if dari == "C" and ke == "F":
   hasil = celsius_ke_fahrenheit(suhu)
