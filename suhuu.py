@@ -1,30 +1,40 @@
+# suhub.py
 def konversi_suhu(suhu, dari, ke):
     suhu = float(suhu)
-    dari = dari.lower()
-    ke = ke.lower()
+    dari = dari.upper()
+    ke = ke.upper()
 
-    if dari == 'c':
-        if ke == 'f':
-            return suhu * 9/5 + 32
-        elif ke == 'k':
-            return suhu + 273.15
-        elif ke == 'c':
-            return suhu
+    if dari == 'C':
+        if ke == 'F':
+            hasil = (suhu * 9/5) + 32
+        elif ke == 'K':
+            hasil = suhu + 273.15
+        elif ke == 'C':
+            hasil = suhu
+        else:
+            hasil = "Invalid target unit"
 
-    elif dari == 'f':
-        if ke == 'c':
-            return (suhu - 32) * 5/9
-        elif ke == 'k':
-            return (suhu - 32) * 5/9 + 273.15
-        elif ke == 'f':
-            return suhu
+    elif dari == 'F':
+        if ke == 'C':
+            hasil = (suhu - 32) * 5/9
+        elif ke == 'K':
+            hasil = (suhu - 32) * 5/9 + 273.15
+        elif ke == 'F':
+            hasil = suhu
+        else:
+            hasil = "Invalid target unit"
 
-    elif dari == 'k':
-        if ke == 'c':
-            return suhu - 273.15
-        elif ke == 'f':
-            return (suhu - 273.15) * 9/5 + 32
-        elif ke == 'k':
-            return suhu
+    elif dari == 'K':
+        if ke == 'C':
+            hasil = suhu - 273.15
+        elif ke == 'F':
+            hasil = (suhu - 273.15) * 9/5 + 32
+        elif ke == 'K':
+            hasil = suhu
+        else:
+            hasil = "Invalid target unit"
 
-    return "Satuan tidak valid!"
+    else:
+        hasil = "Invalid source unit"
+
+    return hasil
