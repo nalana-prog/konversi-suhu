@@ -1,36 +1,32 @@
 #Rumus Konversi Suhu
-def celsius_ke_fahrenheit(suhu):
-  return (suhu * 9/5) + 32
-
-def celsius_ke_kelvin(suhu):
-  return suhu + 273.15
-
-def fahrenheit_ke_celsius(suhu):
-  return (suhu - 32) * 5/9
-
-def fahrenheit_ke_kelvin(suhu):
-  return (fahrenheit_ke_celsius(suhu) + 273.15)
-
-def kelvin_ke_celsius(suhu):
-  return suhu - 273.15
-
-def kelvin_ke_fahrenheit(suhu):
-  return (kelvin_ke_celsius(suhu) * 9/5) + 32
-
-#Pemilihan Rumus Konversi
-
-if dari == "C" and ke == "F":
-  hasil = celsius_ke_fahrenheit(suhu)
-elif dari == "C" and ke == "K":
-  hasil = celsius_ke_kelvin(suhu)
-elif dari == "F" and ke == "C":
-  hasil = fahrenheit_ke_celsius(suhu)
-elif dari == "F" and ke == "K":
-  hasil = fahrenheit_ke_kelvin(suhu)
-elif dari == "K" and ke == "C":
-  hasil = kelvin_ke_celsius(suhu)
-elif dari == "K" and ke == "F":
-  hasil = kelvin_ke_fahrenheit(suhu)
+if dari == 'C':
+    if ke == 'F':
+        hasil = (suhu * 9/5) + 32
+    elif ke == 'K':
+        hasil = suhu + 273.15
+    elif ke == 'C':
+        hasil = suhu
+    else:
+        hasil = "satuan suhu tidak valid"
+elif dari == 'F':
+    if ke == 'C':
+        hasil = (suhu - 32) * 5/9
+    elif ke == 'K':
+        hasil = (suhu - 32) * 5/9 + 273.15
+    elif ke == 'F':
+        hasil = suhu
+    else:
+        hasil = "satuan suhu tidak valid"
+elif dari == 'K':
+    if ke == 'C':
+        hasil = suhu - 273.15
+    elif ke == 'F':
+        hasil = (suhu - 273.15) * 9/5 + 32
+    elif ke == 'K':
+        hasil = suhu
+    else:
+        hasil = "satuan suhu tidak valid"
 else:
-    print("Satuan suhu tidak valid.")
+    hasil = "satuan suhu tidak valid"
+
 
