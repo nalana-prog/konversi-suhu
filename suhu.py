@@ -1,4 +1,7 @@
-#suhuu.py
+# =========================
+# suhu.py
+# Modul konversi suhu
+# =========================
 
 def konversi_suhu(suhu, dari, ke):
     suhu = float(suhu)
@@ -28,5 +31,7 @@ def konversi_suhu(suhu, dari, ke):
             return (suhu - 273.15) * 9/5 + 32
         elif ke == 'K':
             return suhu
+    if ke == 'k' and hasil < 0:
+    return "Eror: nilai suhu tidak valid"
 
     return "Satuan tidak valid!"
