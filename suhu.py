@@ -37,6 +37,6 @@ def konversi_suhu(suhu, dari, ke):
             return (suhu - 273.15) * 9/5 + 32
         elif ke == 'K':
             return suhu
-    if ke == 'k' and hasil < 0:
+    elif ke == 'K' and hasil < 0:
     return "Eror: nilai suhu tidak valid"
 
